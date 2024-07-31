@@ -1,17 +1,19 @@
 import Link from "next/link";
 import { fetchCategories } from "@/app/lib/api";
 
+import styles from "@/components/category-list.module.css";
+
 export default async function CategoryList() {
   const categories = await fetchCategories();
 
   return (
-    <div>
-      <h2>Categories</h2>
-      <ul>
+    <div className={styles.categoryListContainer}>
+      <h2 className={styles.categoryHeader}>Categories</h2>
+      <ul className={styles.categoryGrid}>
         {categories.map((category) => (
-          <li key={category}>
-            <Link href={`/category/${category}`}>
-              <div>{category}</div>
+          <li key={category} className={styles.categoryItem}>
+            <Link href={`/category/${encodeURIComponent(category)}`}>
+              <div className={styles.categoryBox}>{category}</div>
             </Link>
           </li>
         ))}
