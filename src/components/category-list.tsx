@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { fetchCategories } from "@/app/lib/api";
+import { fetchCategories } from "@/lib/api";
 
 import styles from "@/components/category-list.module.css";
 

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
+import { Header } from "@/components/header";
+import { StoreProvider } from "@/app/StoreProvider";
+
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,8 +19,13 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <StoreProvider>
+          <Header />
+          <main className={inter.className}>{children}</main>
+        </StoreProvider>
+      </body>
     </html>
   );
 }
