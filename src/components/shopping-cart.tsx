@@ -8,12 +8,14 @@ import styles from "@/components/shopping-cart.module.css";
 
 export function ShoppingCart() {
   const router = useRouter();
-  const cartCount = useAppSelector((state) => state.cart.length);
+  const cart = useAppSelector((state) => state.cart);
+
+  const productsInCart = cart.reduce((sum, item) => sum + item.qty, 0);
 
   return (
-    <div className={styles.shoppingCartContainer}>
-      <ShoppingCartIcon size={32} onClick={() => router.push("/checkout")} className={styles.shoppingCartIcon} />
-      {cartCount > 0 && <div className={styles.badge}>{cartCount}</div>}
+    <div className={styles.shoppingCartContainer} onClick={() => router.push("/checkout")}>
+      <ShoppingCartIcon size={32} className={styles.shoppingCartIcon} />
+      {productsInCart > 0 && <div className={styles.badge}>{productsInCart}</div>}
     </div>
   );
 }
