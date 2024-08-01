@@ -8,3 +8,11 @@ export interface Product {
   category: Category;
   image: string;
 }
+
+export interface CartItem {
+  id: string;
+  title: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
