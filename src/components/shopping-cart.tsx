@@ -10,7 +10,7 @@ export function ShoppingCart() {
   const router = useRouter();
   const cart = useAppSelector((state) => state.cart);
 
-  const productsInCart = cart.reduce((sum, item) => sum + item.qty, 0);
+  const productsInCart = cart.reduce((sum, item) => sum + item.count, 0);
 
   return (
     <div className={styles.shoppingCartContainer} onClick={() => router.push("/checkout")}>

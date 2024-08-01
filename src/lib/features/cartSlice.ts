@@ -4,7 +4,7 @@ type CartItem = {
   id: string;
   title: string;
   price: number;
-  qty: number;
+  count: number;
   image: string;
 };
 
@@ -18,9 +18,9 @@ const cartSlice = createSlice({
       const { id, title, price, image } = action.payload;
       const existingItem = state.find((item) => item.id === id);
       if (existingItem) {
-        existingItem.qty += 1;
+        existingItem.count += 1;
       } else {
-        state.push({ id, title, price, qty: 1, image });
+        state.push({ id, title, price, count: 1, image });
       }
     },
     removeFromCart: (state, action: PayloadAction<string>) => {
@@ -30,14 +30,14 @@ const cartSlice = createSlice({
       const cartId = action.payload;
       const cartItem = state.find((item) => item.id === cartId);
       if (cartItem) {
-        cartItem.qty += 1;
+        cartItem.count += 1;
       }
     },
     decrementCartQuantity: (state, action: PayloadAction<string>) => {
       const cartId = action.payload;
       const cartItem = state.find((item) => item.id === cartId);
-      if (cartItem && cartItem.qty > 1) {
-        cartItem.qty -= 1;
+      if (cartItem && cartItem.count > 1) {
+        cartItem.count -= 1;
       }
     },
   },
