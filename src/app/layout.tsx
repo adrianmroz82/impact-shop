@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { ReactNode } from "react";
+import { Header } from "@/components/header";
+import { StoreProvider } from "@/app/StoreProvider";
+
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const satoshiFont = localFont({ src: "../../public/fonts/satoshi-light.otf" });
 
 export const metadata: Metadata = {
   title: "Impact Shop",
@@ -16,8 +19,13 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning className={`${satoshiFont.className}`}>
+      <body>
+        <StoreProvider>
+          <Header />
+          <main>{children}</main>
+        </StoreProvider>
+      </body>
     </html>
   );
 }
