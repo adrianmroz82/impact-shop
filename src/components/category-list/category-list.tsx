@@ -8,7 +8,7 @@ export default async function CategoryList() {
 
   return (
     <div className={styles.categoryListContainer}>
-      <h2 className={styles.categoryHeader}>Categories</h2>
+      <h2>Discover our Collection</h2>
       <ul className={styles.categoryGrid}>
         {categories.map((category) => (
           <li key={category} className={styles.categoryItem}>
