@@ -29,10 +29,10 @@ export default function Checkout() {
           <li key={idx}>
             {cartItem.title} - ${cartItem.price}
             <button onClick={() => handleIncrementQuantity(cartItem.id)}>+</button>
-            {cartItem.qty ?? 1}
+            {cartItem.quantity ?? 1}
             <button onClick={() => handleDecrementQuantity(cartItem.id)}>-</button>
             <button onClick={() => handleRemoveItem(cartItem.id)}>remove</button>
-            TOTAL: ${cartItem.price * cartItem.qty}
+            TOTAL: ${cartItem.price * cartItem.quantity}
           </li>
         ))}
       </ul>

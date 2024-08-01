@@ -13,7 +13,7 @@ interface Props {
 
 export function ProductsList({ products, category }: Props) {
   const dispatch = useAppDispatch();
-  const count = products.length;
+  const numberOfItems = products.length;
 
   const handleAddToCart = (product: Product) => {
     dispatch(addToCart(product));
@@ -22,7 +22,7 @@ export function ProductsList({ products, category }: Props) {
   return (
     <div className={styles.categoryContainer}>
       <h2>
-        Category: {category}, found {count} items
+        Category: {category}, found {numberOfItems} items
       </h2>
       <ul className={styles.productGrid}>
         {products.map((product) => (
