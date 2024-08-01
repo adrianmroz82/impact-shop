@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { fetchCategories } from "@/lib/api";
 
-import styles from "@/components/category-list.module.css";
+import styles from "@/components/category-list/category-list.module.css";
 
 export default async function CategoryList() {
   const categories = await fetchCategories();
