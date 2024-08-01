@@ -1,6 +1,6 @@
 import { fetchProductsByCategory } from "@/lib/api";
 import { Category } from "@/lib/model";
-import { ProductsList } from "@/components/products-list";
+import { ProductsList } from "@/components/products-list/products-list";
 
 interface Props {
   params: {

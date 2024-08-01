@@ -2,20 +2,20 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
-}
 
-.shoppingCartIcon {
-  cursor: pointer;
-}
+  .shoppingCartIcon {
+    cursor: pointer;
+  }
 
-.badge {
-  position: absolute;
-  top: -0.5rem;
-  right: -0.5rem;
-  background-color: rgb(50, 119, 231);
-  color: white;
-  border-radius: 50%;
-  padding: 0.3rem 0.5rem;
-  font-size: 0.75rem;
-  line-height: 1;
+  .badge {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: rgb(50, 119, 231);
+    color: white;
+    border-radius: 50%;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1;
+  }
 }

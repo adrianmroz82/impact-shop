@@ -4,7 +4,8 @@ import Image from "next/image";
 import { Category, Product } from "@/lib/model";
 import { addToCart } from "@/lib/features/cartSlice";
 import { useAppDispatch } from "@/lib/hooks";
-import styles from "@/components/products-list.module.css";
+
+import styles from "@/components/products-list/products-list.module.css";
 
 interface Props {
   products: Product[];
@@ -24,11 +25,19 @@ export function ProductsList({ products, category }: Props) {
       <h2>
         Category: {category}, found {numberOfItems} items
       </h2>
-      <ul className={styles.productGrid}>
+      <ul className={styles.productsContainer}>
         {products.map((product) => (
           <li key={product.id} className={styles.productItem}>
             <div className={styles.productBox}>
-              <Image src={product.image} alt={product.title} width={500} height={500} className={styles.productImage} />
+              <div className={styles.productImageContainer}>
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={500}
+                  height={500}
+                  className={styles.productImage}
+                />
+              </div>
               <div className={styles.productInfo}>
                 <div className={styles.productTitle}>{product.title}</div>
                 <div className={styles.productPrice}>${product.price}</div>
