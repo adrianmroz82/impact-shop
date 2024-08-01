@@ -33,7 +33,7 @@ export function ProductsList({ products, category }: Props) {
                 <div className={styles.productTitle}>{product.title}</div>
                 <div className={styles.productPrice}>${product.price}</div>
                 <button className={styles.addToCartButton} onClick={() => handleAddToCart(product)}>
-                  Add to Cart
+                  Add to cart
                 </button>
               </div>
             </div>

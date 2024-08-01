@@ -1,5 +1,10 @@
 .categoryContainer {
   padding: 4rem;
+
+  & h2 {
+    padding-left: 2rem;
+    margin: 3rem 0;
+  }
 }
 
 .productGrid {
@@ -16,13 +21,13 @@
   flex: 1 1 calc(33% - 2rem);
   max-width: calc(33% - 2rem);
   box-sizing: border-box;
+  background-color: #fff;
 }
 
 .productBox {
-  border: 1px solid #dddddd;
-  padding: 1rem;
-  text-align: center;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
 }
 
 .productImage {
@@ -33,8 +38,9 @@
 }
 
 .productInfo {
-  background-color: #ffffff;
-  padding: 1rem 0;
+  background-color: rgba(245, 245, 245, 0.8);
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 .productTitle {
@@ -48,21 +54,21 @@
 }
 
 .addToCartButton {
-  background-color: #5525c7;
+  background-color: #000000;
   border: none;
-  border-radius: 5px;
+  border-radius: 2rem;
   color: white;
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 1rem;
+
+  &:hover {
+    background-color: #343237;
+  }
 }
 
-.addToCartButton:hover {
-  background-color: #471a98;
-}
-
-@media (max-width: 1600px) {
+@media (max-width: 1980px) {
   .productItem {
     flex: 1 1 calc(50% - 2rem);
     max-width: 100%;
