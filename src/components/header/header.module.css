@@ -1,0 +1,25 @@
+.header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: white;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 5rem;
+}
+
+.headerLogo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none;
+}
