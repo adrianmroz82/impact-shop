@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Category, Product } from "@/lib/model";
 import { addToCart } from "@/lib/features/cartSlice";
 import { useAppDispatch } from "@/lib/hooks";
+import { Button } from "@/components/button/button";
 
 import styles from "@/components/products-list/products-list.module.css";
 
@@ -41,9 +42,7 @@ export function ProductsList({ products, category }: Props) {
               <div className={styles.productInfo}>
                 <div className={styles.productTitle}>{product.title}</div>
                 <div className={styles.productPrice}>${product.price}</div>
-                <button className={styles.addToCartButton} onClick={() => handleAddToCart(product)}>
-                  Add to cart
-                </button>
+                <Button clickHandler={() => handleAddToCart(product)} text="Add to cart" />
               </div>
             </div>
           </li>

@@ -68,21 +68,6 @@
   .productPrice {
     color: #333333;
   }
-
-  .addToCartButton {
-    background-color: #000000;
-    border: none;
-    border-radius: 2rem;
-    color: white;
-    padding: 0.8rem 2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 1rem;
-
-    &:hover {
-      background-color: #343237;
-    }
-  }
 }
 
 @media (max-width: 1680px) {

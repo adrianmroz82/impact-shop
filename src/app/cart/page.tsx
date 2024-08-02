@@ -7,6 +7,7 @@ import { decrementCartQuantity, incrementCartQuantity, removeFromCart } from "@/
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
 import styles from "@/app/cart/page.module.css";
+import { Button } from "@/components/button/button";
 
 export default function Cart() {
   const cart = useAppSelector((state) => state.cart);
@@ -25,14 +26,13 @@ export default function Cart() {
     dispatch(removeFromCart(id));
   };
 
-  // Calculate total price of the cart
   const totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   function NoItemsInCart() {
     return (
       <div className={styles.noItemsContainer}>
         <h2>There are no items in your cart</h2>
-        <button onClick={() => router.push("/")}>Go back to shopping</button>
+        <Button clickHandler={() => router.push("/")} text="Go back to shopping" />
       </div>
     );
   }
