@@ -1,0 +1,19 @@
+.container {
+  padding: 2rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 6rem;
+  border-radius: 0.8rem;
+
+  .list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .totalPrice {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+}

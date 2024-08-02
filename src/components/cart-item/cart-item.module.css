@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.image {
+  border-radius: 0.5rem;
+}
+
+.itemDetails {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.itemTitle {
+  margin: 0 0 10px 0;
+}
+
+.cartButtons {
+  display: flex;
+  align-items: center;
+
+  .button {
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: #f0f0f0;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+.price {
+  margin-left: 20px;
+  text-align: right;
+}
+
+.removeIcon {
+  cursor: pointer;
+}
