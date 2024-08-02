@@ -23,9 +23,8 @@ export function ProductsList({ products, category }: Props) {
 
   return (
     <div className={styles.categoryContainer}>
-      <h2>
-        Category: {category}, found {numberOfItems} items
-      </h2>
+      <h2 className={styles.categoryHeader}>Category: {category},</h2>
+      <p className={styles.categoryDescription}>found {numberOfItems} items</p>
       <ul className={styles.productsContainer}>
         {products.map((product) => (
           <li key={product.id} className={styles.productItem}>
