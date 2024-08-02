@@ -4,7 +4,7 @@ import { ShoppingCartIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/lib/hooks";
 
-import styles from "@/components/shopping-cart.module.css";
+import styles from "@/components/shopping-cart/shopping-cart.module.css";
 
 export function ShoppingCart() {
   const router = useRouter();
