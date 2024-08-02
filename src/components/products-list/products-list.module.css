@@ -1,11 +1,16 @@
 .categoryContainer {
-  /* width: 60%;
-  margin: 0 auto; */
   padding: 6rem;
 
   & h2 {
     padding-left: 2rem;
-    margin: 3rem 0;
+    margin: 4rem 0;
+    margin-top: 6rem;
+    margin-bottom: 0;
+  }
+
+  & p {
+    padding-left: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -21,9 +26,6 @@
 }
 
 .productItem {
-  /* TODO: consider 2 columns on desktop */
-  /* flex: 1 1 calc(50% - 2rem); */
-  /* max-width: 100%; */
   flex: 1 1 calc(33% - 2rem);
   max-width: calc(33% - 2rem);
   box-sizing: border-box;
