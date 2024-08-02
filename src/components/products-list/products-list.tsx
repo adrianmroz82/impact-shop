@@ -4,7 +4,8 @@ import Image from "next/image";
 import { Category, Product } from "@/lib/model";
 import { addToCart } from "@/lib/features/cartSlice";
 import { useAppDispatch } from "@/lib/hooks";
-import styles from "@/components/products-list.module.css";
+
+import styles from "@/components/products-list/products-list.module.css";
 
 interface Props {
   products: Product[];
@@ -13,7 +14,7 @@ interface Props {
 
 export function ProductsList({ products, category }: Props) {
   const dispatch = useAppDispatch();
-  const count = products.length;
+  const numberOfItems = products.length;
 
   const handleAddToCart = (product: Product) => {
     dispatch(addToCart(product));
@@ -22,18 +23,26 @@ export function ProductsList({ products, category }: Props) {
   return (
     <div className={styles.categoryContainer}>
       <h2>
-        Category: {category}, found {count} items
+        Category: {category}, found {numberOfItems} items
       </h2>
-      <ul className={styles.productGrid}>
+      <ul className={styles.productsContainer}>
         {products.map((product) => (
           <li key={product.id} className={styles.productItem}>
             <div className={styles.productBox}>
-              <Image src={product.image} alt={product.title} width={500} height={500} className={styles.productImage} />
+              <div className={styles.productImageContainer}>
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={500}
+                  height={500}
+                  className={styles.productImage}
+                />
+              </div>
               <div className={styles.productInfo}>
                 <div className={styles.productTitle}>{product.title}</div>
                 <div className={styles.productPrice}>${product.price}</div>
                 <button className={styles.addToCartButton} onClick={() => handleAddToCart(product)}>
-                  Add to Cart
+                  Add to cart
                 </button>
               </div>
             </div>
