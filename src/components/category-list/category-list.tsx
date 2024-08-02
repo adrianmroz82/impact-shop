@@ -12,8 +12,8 @@ export default async function CategoryList() {
       <ul className={styles.categoryGrid}>
         {categories.map((category) => (
           <li key={category} className={styles.categoryItem}>
-            <Link href={`/category/${encodeURIComponent(category)}`}>
-              <div className={styles.categoryBox}>{category}</div>
+            <Link className={styles.link} href={`/category/${encodeURIComponent(category)}`}>
+              <div className={styles.categoryBox}>{category.toUpperCase()}</div>
             </Link>
           </li>
         ))}
