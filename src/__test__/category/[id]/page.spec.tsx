@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Category, Product as ProductType } from "@/lib/model";
+import { mockCategory, mockProducts } from "@/__test__/sharedMocks";
 import Product from "@/app/category/[id]/page";
 
 const mockGetProductsByCategory = jest.fn();
@@ -21,27 +22,6 @@ jest.mock("@/components/product-list/product-list", () => ({
 }));
 
 describe("Product Page", () => {
-  // TODO: move to shared mocks
-  const mockCategory: Category = "electronics";
-  const mockProducts: ProductType[] = [
-    {
-      id: 1,
-      title: "Product 1",
-      description: "Test description 1",
-      image: "/path/to/image1",
-      price: 10,
-      category: "jewelery",
-    },
-    {
-      id: 2,
-      title: "Product 2",
-      description: "Test description 2",
-      image: "/path/to/image2",
-      price: 20,
-      category: "electronics",
-    },
-  ];
-
   beforeEach(() => {
     mockGetProductsByCategory.mockResolvedValue(mockProducts);
   });

@@ -1,30 +1,12 @@
+import { mockCategory, mockProducts } from "@/__test__/sharedMocks";
 import { getProductsByCategory } from "@/lib/api/get-products";
-import { Category, Product } from "@/lib/model";
 
 global.fetch = jest.fn();
 
 const BASE_URL = "https://fakestoreapi.com/products";
 
 describe("getProductsByCategory", () => {
-  const mockCategory: Category = "electronics";
-  const mockProducts: Product[] = [
-    {
-      id: 1,
-      title: "Product 1",
-      description: "Test description 1",
-      image: "/path/to/image1",
-      price: 10,
-      category: "electronics",
-    },
-    {
-      id: 2,
-      title: "Product 2",
-      description: "Test description 2",
-      image: "/path/to/image2",
-      price: 20,
-      category: "electronics",
-    },
-  ];
+ 
 
   beforeEach(() => {
     jest.clearAllMocks();

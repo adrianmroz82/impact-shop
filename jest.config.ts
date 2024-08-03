@@ -16,6 +16,7 @@ const config: Config = {
     "!<rootDir>/src/lib/hooks.ts",
     // models
     "!<rootDir>/src/lib/model.ts",
+    "!<rootDir>/src/__test__/sharedMocks.ts",
   ],
   coverageThreshold: {
     global: {

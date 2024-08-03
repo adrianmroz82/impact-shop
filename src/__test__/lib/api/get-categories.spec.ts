@@ -1,3 +1,4 @@
+import { mockCategories } from "@/__test__/sharedMocks";
 import { getCategories } from "@/lib/api/get-categories";
 import { Category } from "@/lib/model";
 
@@ -8,7 +9,6 @@ describe("getCategories", () => {
 
   it("should fetch categories successfully", async () => {
     // given
-    const mockCategories: Category[] = ["electronics", "jewelery", "men's clothing", "women's clothing"];
     global.fetch = jest.fn(
       () =>
         Promise.resolve({
