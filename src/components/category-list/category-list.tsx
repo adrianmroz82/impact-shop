@@ -3,7 +3,7 @@ import { fetchCategories } from "@/lib/api";
 
 import styles from "@/components/category-list/category-list.module.css";
 
-export default async function CategoryList() {
+export async function CategoryList() {
   const categories = await fetchCategories();
 
   return (

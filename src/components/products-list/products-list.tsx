@@ -23,8 +23,12 @@ export function ProductsList({ products, category }: Props) {
 
   return (
     <div className={styles.categoryContainer}>
-      <h2 className={styles.categoryHeader}>Category: {category},</h2>
-      <p className={styles.categoryDescription}>found {numberOfItems} items</p>
+      <h2 data-testid="category-header" className={styles.categoryHeader}>
+        Category: {category}
+      </h2>
+      <p data-testid="category-description" className={styles.categoryDescription}>
+        found {numberOfItems} items
+      </p>
       <ul className={styles.productsContainer}>
         {products.map((product) => (
           <li key={product.id} className={styles.productItem}>
@@ -39,8 +43,8 @@ export function ProductsList({ products, category }: Props) {
                 />
               </div>
               <div className={styles.productInfo}>
-                <div className={styles.productTitle}>{product.title}</div>
-                <div className={styles.productPrice}>${product.price}</div>
+                <div data-testid="product-title" className={styles.productTitle}>{product.title}</div>
+                <div data-testid="product-price" className={styles.productPrice}>${product.price}</div>
                 <Button clickHandler={() => handleAddToCart(product)} text="Add to cart" />
               </div>
             </div>
