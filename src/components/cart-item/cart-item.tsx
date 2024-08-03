@@ -11,7 +11,6 @@ interface Props {
 
 export function CartItem({ cartItem }: Props) {
   const { handleIncrementQuantity, handleDecrementQuantity, handleRemoveItem } = useCartActions();
-
   const { id, title, image, price, quantity } = cartItem;
 
   return (
@@ -20,18 +19,29 @@ export function CartItem({ cartItem }: Props) {
       <div className={styles.itemDetails}>
         <h3 className={styles.itemTitle}>{title}</h3>
         <div className={styles.cartButtons}>
-          Quantity:
-          <button className={styles.button} onClick={() => handleDecrementQuantity(id)}>
+          <span>Quantity:</span>
+          <button
+            data-testid="cart-item-decrement-button"
+            className={styles.button}
+            onClick={() => handleDecrementQuantity(id)}>
             -
           </button>
           <span>{quantity}</span>
-          <button className={styles.button} onClick={() => handleIncrementQuantity(id)}>
+          <button
+            data-testid="cart-item-increment-button"
+            className={styles.button}
+            onClick={() => handleIncrementQuantity(id)}>
             +
           </button>
         </div>
       </div>
       <div className={styles.price}>
-        <RemoveIcon className={styles.removeIcon} size={24} onClick={() => handleRemoveItem(id)} />
+        <RemoveIcon
+          data-testid="remove-icon"
+          className={styles.removeIcon}
+          size={24}
+          onClick={() => handleRemoveItem(id)}
+        />
         <p>${price.toFixed(2)} each</p>
         <p>Total: ${(price * quantity).toFixed(2)}</p>
       </div>

@@ -7,7 +7,7 @@ interface Props {
 
 export function Button({ clickHandler, text }: Props) {
   return (
-    <button className={styles.addToCartButton} onClick={clickHandler}>
+    <button data-testid="button" className={styles.addToCartButton} onClick={clickHandler}>
       {text}
     </button>
   );
