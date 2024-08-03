@@ -6,14 +6,14 @@ import { addToCart } from "@/lib/features/cartSlice";
 import { useAppDispatch } from "@/lib/hooks";
 import { Button } from "@/components/button/button";
 
-import styles from "@/components/products-list/products-list.module.css";
+import styles from "@/components/product-list/product-list.module.css";
 
 interface Props {
   products: Product[];
   category: Category;
 }
 
-export function ProductsList({ products, category }: Props) {
+export function ProductList({ products, category }: Props) {
   const dispatch = useAppDispatch();
   const numberOfItems = products.length;
 

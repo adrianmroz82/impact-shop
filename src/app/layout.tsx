@@ -23,7 +23,6 @@ export default function RootLayout({ children }: Props) {
       <body>
         <StoreProvider>
           <Header />
-          <Breadcrumbs />
           <main>{children}</main>
         </StoreProvider>
       </body>

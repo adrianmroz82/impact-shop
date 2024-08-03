@@ -83,7 +83,7 @@ describe("ProductList", () => {
     products.forEach((product) => {
       const addButton = queryAllByText("Add to cart");
       fireEvent.click(addButton[0]);
-      
+
       // then
       expect(mockDispatch).toHaveBeenCalledWith(mockAddToCart(product));
     });
