@@ -1,4 +1,4 @@
-import { fetchProductsByCategory } from "@/lib/api";
+import { getProductsByCategory } from "@/lib/api/get-products";
 import { Category } from "@/lib/model";
 import { ProductList } from "@/components/product-list/product-list";
 
@@ -10,7 +10,7 @@ interface Props {
 
 export default async function Product({ params }: Props) {
   const category = decodeURIComponent(params.id) as Category;
-  const products = await fetchProductsByCategory(category);
+  const products = await getProductsByCategory(category);
 
   return <ProductList products={products} category={category} />;
 }

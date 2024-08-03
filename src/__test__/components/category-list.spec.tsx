@@ -2,16 +2,16 @@ import { render, screen } from "@testing-library/react";
 import { CategoryList } from "@/components/category-list/category-list";
 import { Category } from "@/lib/model";
 
-const mockFetchCategories = jest.fn();
-jest.mock("@/lib/api", () => ({
-  fetchCategories: () => mockFetchCategories(),
+const mockGetCategories = jest.fn();
+jest.mock("@/lib/api/get-categories", () => ({
+  getCategories: () => mockGetCategories(),
 }));
 
 describe("CategoryList", () => {
   const categories: Category[] = ["electronics", "jewelery", "men's clothing", "women's clothing"];
 
   beforeEach(() => {
-    mockFetchCategories.mockResolvedValue(categories);
+    mockGetCategories.mockResolvedValue(categories);
   });
 
   afterEach(() => {

@@ -2,9 +2,9 @@ import { render, screen } from "@testing-library/react";
 import { Category, Product as ProductType } from "@/lib/model";
 import Product from "@/app/category/[id]/page";
 
-const mockFetchProductsByCategory = jest.fn();
-jest.mock("@/lib/api", () => ({
-  fetchProductsByCategory: () => mockFetchProductsByCategory(),
+const mockGetProductsByCategory = jest.fn();
+jest.mock("@/lib/api/get-products", () => ({
+  getProductsByCategory: () => mockGetProductsByCategory(),
 }));
 
 jest.mock("@/components/product-list/product-list", () => ({
@@ -43,7 +43,7 @@ describe("Product Page", () => {
   ];
 
   beforeEach(() => {
-    mockFetchProductsByCategory.mockResolvedValue(mockProducts);
+    mockGetProductsByCategory.mockResolvedValue(mockProducts);
   });
 
   afterEach(() => {

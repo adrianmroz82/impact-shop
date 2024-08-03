@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { fetchCategories } from "@/lib/api";
+import { getCategories } from "@/lib/api/get-categories";
 
 import styles from "@/components/category-list/category-list.module.css";
 
 export async function CategoryList() {
-  const categories = await fetchCategories();
+  const categories = await getCategories();
 
   return (
     <div className={styles.categoryListContainer}>
