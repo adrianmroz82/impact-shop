@@ -22,7 +22,7 @@ export function CartToast() {
       setVisible(true);
       const timer = setTimeout(() => {
         setVisible(false);
-      }, 400000);
+      }, 4000);
 
       return () => clearTimeout(timer);
     }

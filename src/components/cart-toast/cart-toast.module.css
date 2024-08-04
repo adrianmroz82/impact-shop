@@ -53,10 +53,6 @@
   right: 1rem;
 }
 
-.viewCartButton {
-  margin-left: 1rem;
-}
-
 @media screen and (max-width: 768px) {
   .notificationContainer {
     width: 100%;
@@ -69,5 +65,13 @@
 
   .notificationContent {
     margin: 0.2rem 1rem;
+  }
+
+  .viewCartButton {
+    margin-left: 1rem;
+  }
+
+  .topSection {
+    margin-left: 1.5rem;
   }
 }
