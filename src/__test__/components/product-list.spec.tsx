@@ -1,9 +1,10 @@
 import { fireEvent, render } from "@testing-library/react";
 import { ProductList } from "@/components/product-list/product-list";
-import { Category, Product } from "@/lib/model";
+import { mockCategory, mockProducts } from "@/__test__/sharedMocks";
 
 const categoryHeaderTestId = "category-header";
 const categoryDescriptionTestId = "category-description";
+const cartToastTestId = "cart-toast";
 
 const mockUseAppDispatch = jest.fn();
 jest.mock("@/lib/hooks", () => ({
@@ -15,37 +16,18 @@ jest.mock("@/lib/features/cartSlice", () => ({
   addToCart: () => mockAddToCart(),
 }));
 
-// TODO: jest.fn
 jest.mock("@/components/button/button", () => ({
   Button: ({ clickHandler, text }: { clickHandler: () => void; text: string }) => (
     <button onClick={clickHandler}>{text}</button>
   ),
 }));
 
+jest.mock("@/components/cart-toast/cart-toast", () => ({
+  CartToast: () => <div data-testid={cartToastTestId} />,
+}));
+
 describe("ProductList", () => {
   const mockDispatch = jest.fn();
-
-  // todo: move to shared?
-  const products: Product[] = [
-    {
-      id: 1,
-      title: "Product 1",
-      price: 100,
-      image: "/images/product1.jpg",
-      category: "electronics",
-      description: "Product 1 description",
-    },
-    {
-      id: 2,
-      title: "Product 2",
-      price: 150,
-      image: "/images/product2.jpg",
-      category: "electronics",
-      description: "Product 2 description",
-    },
-  ];
-
-  const category: Category = "electronics";
 
   beforeEach(() => {
     mockUseAppDispatch.mockReturnValue(mockDispatch);
@@ -57,6 +39,9 @@ describe("ProductList", () => {
 
   it("should render the ProductList component correctly", () => {
     // given
+    const products = mockProducts;
+    const category = mockCategory;
+
     // when
     const { getByTestId, getByText } = render(<ProductList products={products} category={category} />);
     const categoryHeader = getByTestId(categoryHeaderTestId);
@@ -77,6 +62,9 @@ describe("ProductList", () => {
 
   it("should dispatch addToCart action when 'Add to cart' button is clicked", () => {
     // given
+    const products = mockProducts;
+    const category = mockCategory;
+
     // when
     const { queryAllByText } = render(<ProductList products={products} category={category} />);
 

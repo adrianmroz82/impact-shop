@@ -11,7 +11,6 @@ jest.mock("@/lib/hooks", () => ({
   useAppSelector: () => mockUseAppSelector(),
 }));
 
-// TODO: jest.fn
 jest.mock("lucide-react", () => ({
   ShoppingCartIcon: ({ size, className }: { size: number; className: string }) => (
     <svg className={className} width={size} height={size} />
