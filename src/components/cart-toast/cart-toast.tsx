@@ -44,7 +44,7 @@ export function CartToast() {
     <div className={styles.notificationContainer}>
       <div className={styles.topSection}>
         <CircleCheckIcon className={styles.checkIcon} />
-        <span>Item has been added to cart</span>
+        <span data-testid="top-section-title">Item has been added to cart</span>
       </div>
       {cart.map(({ id, title, image, price }) => (
         <div className={styles.notificationContent} key={id}>
@@ -55,7 +55,7 @@ export function CartToast() {
           </div>
         </div>
       ))}
-      <CloseIcon className={styles.closeIcon} size={20} onClick={handleVisibility} />
+      <CloseIcon data-testid="close-icon" className={styles.closeIcon} size={20} onClick={handleVisibility} />
       <div className={styles.viewCartButton}>
         <Button text={`View cart (${quantity})`} clickHandler={handleRedirect} />
       </div>
