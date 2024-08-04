@@ -3,27 +3,33 @@ import { render } from "@testing-library/react";
 import RootLayout from "@/app/layout";
 
 const headerTestId = "header";
-// const breadcrumbsTestId = "breadcrumbs";
+const navigationBarTestId = "navigation-bar";
+const storeProviderTestId = "store-provider";
 
 jest.mock("@/components/header/header", () => ({
   Header: jest.fn(() => <header data-testid={headerTestId}>Header Component</header>),
 }));
 
-// jest.mock("@/components/breadcrumbs/breadcrumbs", () => ({
-//   Breadcrumbs: jest.fn(() => <nav data-testid={breadcrumbsTestId}>Breadcrumbs Component</nav>),
-// }));
+jest.mock("@/components/navigation-bar/navigation-bar", () => ({
+  NavigationBar: jest.fn(() => <nav data-testid={navigationBarTestId} />),
+}));
+
+jest.mock("@/app/store-provider", () => ({
+  StoreProvider: jest.fn(({ children }) => <div data-testid={storeProviderTestId}>{children}</div>),
+}));
 
 const renderRootLayout = (children: ReactNode) => render(<RootLayout>{children}</RootLayout>);
 
 describe("RootLayout", () => {
-  it("should render Header and Breadcrumbs components", () => {
+  it("should render Header and NavigationBar components", () => {
     // given
     // when
     const { getByTestId } = renderRootLayout(<div>Test Content</div>);
 
     // then
     expect(getByTestId(headerTestId)).toBeInTheDocument();
-    // expect(getByTestId(breadcrumbsTestId)).toBeInTheDocument();
+    expect(getByTestId(navigationBarTestId)).toBeInTheDocument();
+    expect(getByTestId(storeProviderTestId)).toBeInTheDocument();
   });
 
   it("should render children within the <main> element", () => {
@@ -36,11 +42,4 @@ describe("RootLayout", () => {
     // then
     expect(getByTestId(childContentTestId)).toBeInTheDocument();
   });
-
-  // it("should apply the font class to <html> element", () => {
-  //   const { container } = renderRootLayout(<div>Test Content</div>);
-
-  //   // Check if the <html> element contains the font class
-  //   expect(container.querySelector("html")).toHaveClass("satoshi-light"); // Adjust class name as needed
-  // });
 });

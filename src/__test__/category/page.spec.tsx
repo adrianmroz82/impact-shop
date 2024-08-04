@@ -1,4 +1,4 @@
-import Category from "@/app/page";
+import Category from "@/app/category/page";
 import { render } from "@testing-library/react";
 
 const categoryListTestId = "category-list";

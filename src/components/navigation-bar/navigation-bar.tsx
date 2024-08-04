@@ -19,7 +19,7 @@ export function NavigationBar() {
   };
 
   return (
-    <div className={styles.navigationBar} onClick={handleGoBack}>
+    <div data-testid="navigation-bar" className={styles.navigationBar} onClick={handleGoBack}>
       <div className={styles.navigationButton}>
         <MoveLeftIcon className={styles.backIcon} size={24} overlineThickness="1" />
         <span className={styles.navigationText}>Go Back</span>
