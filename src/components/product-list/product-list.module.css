@@ -20,7 +20,7 @@
   list-style: none;
   padding: 0;
   max-width: 100%;
-  background-color: #fff;
+  background-color: var(--primary-color);
 }
 
 .productItem {
@@ -39,19 +39,19 @@
 }
 
 .productImageContainer {
-  background-color: #fff;
+  background-color: var(--primary-color);
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 
   .productImage {
-    border-radius: 8px;
+    border-radius: 1rem;
     object-fit: contain;
   }
 }
 
 .productInfo {
-  background-color: rgba(245, 245, 245, 0.8);
+  background-color: var(--secondary-color-light);
   padding: 1rem;
   border-radius: 0.5rem;
   height: 100%;
@@ -59,12 +59,12 @@
   .productTitle {
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #333333;
+    color: var(--primary-color-dark);
     font-size: 1rem;
   }
 
   .productPrice {
-    color: #333333;
+    color: var(--primary-color-dark);
   }
 }
 

@@ -5,7 +5,8 @@ import { Header } from "@/components/header/header";
 import { StoreProvider } from "@/app/store-provider";
 import { NavigationBar } from "@/components/navigation-bar/navigation-bar";
 
-import "./globals.css";
+import "@/styles/globals.css";
+import "@/styles/variables.css";
 
 const satoshiFont = localFont({ src: "../../public/fonts/satoshi-light.otf" });
 
