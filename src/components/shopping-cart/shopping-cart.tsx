@@ -12,8 +12,12 @@ export function ShoppingCart() {
 
   const numOfProductsInCart = cart.reduce((sum, item) => sum + item.quantity, 0);
 
+  const handleRedirect = () => {
+    router.push("/cart");
+  };
+
   return (
-    <div data-testid="shopping-cart" className={styles.shoppingCartContainer} onClick={() => router.push("/cart")}>
+    <div data-testid="shopping-cart" className={styles.shoppingCartContainer} onClick={handleRedirect}>
       <ShoppingCartIcon size={32} className={styles.shoppingCartIcon} />
       {numOfProductsInCart > 0 && <div className={styles.badge}>{numOfProductsInCart}</div>}
     </div>
