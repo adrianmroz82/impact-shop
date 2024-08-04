@@ -19,7 +19,6 @@
   gap: 2rem;
   list-style: none;
   padding: 0;
-  /* justify-content: center; */
   max-width: 100%;
   background-color: #fff;
 }
@@ -48,8 +47,6 @@
   .productImage {
     border-radius: 8px;
     object-fit: contain;
-    max-width: 100%;
-    max-height: 16rem;
   }
 }
 

@@ -1,0 +1,73 @@
+.notificationContainer {
+  position: fixed;
+  top: 4rem;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  z-index: 1000;
+  gap: 1rem;
+  width: 25rem;
+  right: 2rem;
+}
+
+.notificationContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+}
+
+.itemDetails {
+  flex: 1;
+
+  .itemTitle {
+    font-weight: bold;
+  }
+
+  .itemPrice {
+    color: #666;
+  }
+}
+
+.topSection {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.5rem;
+
+  .checkIcon {
+    color: green;
+  }
+}
+.closeIcon {
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.viewCartButton {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .notificationContainer {
+    width: 100%;
+    max-height: 100%;
+    padding: 1rem 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+  }
+
+  .notificationContent {
+    margin: 0.2rem 1rem;
+  }
+}
