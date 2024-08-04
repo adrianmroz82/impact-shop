@@ -1,8 +1,8 @@
 .navigationBar {
   display: flex;
   align-items: center;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #ddd;
+  background-color: var(--secondary-color-light);
+  border-bottom: 1px solid var(--secondary-color);
   margin-top: 5.4rem;
   padding: 1rem;
 }

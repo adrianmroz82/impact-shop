@@ -8,6 +8,12 @@
 
 @media (max-width: 900px) {
   .main {
-    padding: 8rem 2rem;
+    padding: 8rem 02rem;
+  }
+}
+
+@media (max-width: 568px) {
+  .category {
+    padding: 6rem 2rem;
   }
 }
