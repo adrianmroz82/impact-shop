@@ -36,7 +36,6 @@ describe("Header", () => {
 
   it("should navigate to the category page when the logo is clicked", () => {
     // given
-
     // when
     const { getByText } = render(<Header />);
     const logo = getByText("Impact Shop");
