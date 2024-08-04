@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { ReactNode } from "react";
 import { Header } from "@/components/header/header";
 import { StoreProvider } from "@/app/store-provider";
+import { NavigationBar } from "@/components/navigation-bar/navigation-bar";
 
 import "./globals.css";
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Props) {
       <body>
         <StoreProvider>
           <Header />
+          <NavigationBar />
           <main>{children}</main>
         </StoreProvider>
       </body>

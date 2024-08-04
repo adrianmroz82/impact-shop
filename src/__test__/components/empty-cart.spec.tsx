@@ -22,10 +22,10 @@ describe("EmptyCart", () => {
     expect(getByTestId(emptyCartTestId)).toBeInTheDocument();
   });
 
-  it("should navigate to the homepage when the button is clicked", () => {
+  it("should navigate when the button is clicked", () => {
     // given
     const pushFn = jest.fn();
-    mockUseRouter.mockReturnValue({ push: pushFn });
+    mockUseRouter.mockReturnValue({ back: pushFn });
 
     // when
     const { getByRole } = render(<EmptyCart />);
@@ -34,6 +34,6 @@ describe("EmptyCart", () => {
     fireEvent.click(button);
 
     // then
-    expect(pushFn).toHaveBeenCalledWith("/");
+    expect(pushFn).toHaveBeenCalledWith();
   });
 });
